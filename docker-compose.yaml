@@ -1,25 +1,19 @@
 services:
-
   backend:
     build:
       context: .
       dockerfile: Backenddocker/Dockerfile
-
     ports:
       - "5050:5050"
-
     depends_on:
       - mongo
-
     networks:
       - mynet
 
   mongo:
     image: mongo:latest
-
     volumes:
       - ./mongodata:/data/db
-
     networks:
       - mynet
 
